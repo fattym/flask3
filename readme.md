@@ -6,31 +6,37 @@
 1. Moringa TM's ; Mentors
 1. Moringa Students ; Assistant designers
 
-## User Stories
-These are the behaviours/features that the application implements for use by a user.
+# DESCRIPTION
 
-As a user I would like to:
-* See various news sources.
-* Select the ones they prefer.
-* See the top news articles from that news source.
-* See the image, description and time the news article was created
-* Click on an article and read it fully from the news source
+This is a Python-Flask Application that allows users to create one minute pitch. You only have 60 seconds to impress someone. 1 minute can make or break you.
+The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
 
-## Description
-    This web application is built using Python framework known as Flask. The app displays information about news from most popular sources, top headlines in the World, categorical
-    and also a user can search for any topic he/she feels like.
+## User Story
+
+- Users can see the pitches other people have posted.
+
+- Users can svote on the pitch they liked and give it a downvote or upvote.
+
+- Users can sign in to leave a comment.
+
+- Users can register on the website.
+
+- Users can receive a welcoming email once they sign up.
+
+- Users can view the pitches they have created in their profile page..
+
+- Users can comment on the different pitches and leave feedback. 
+
+- Users can submit a pitch in any category. 
+
+- Users can view the different categories. 
+
 ## Known Bugs
 If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue here by including your search query and the expected result.
 
 If you'd like to request a new function, feel free to do so by opening an issue here. Please include sample queries and their corresponding results
 ## Specifications
-| Behaviour | Input | Output |
-| :---------------- | :---------------: | ------------------: |
-| Display news sources | **On page load** | List of various news sources is displayed in a list |
-| Display tabs with news by category | **On Tab link click** | Clickable links to open news based on category |
-| Display articles from a news source | **Click a news source** | Redirected to a page with articles from the source |
-| Display the preview of an article | **On page load** | Each article displays an image,description and publication date |
-| To Read an entire article  | **Click an article** | Redirected to the news source's site to read the entire article |
+
 ## setup /Installation Requirements
 First clone the repo
    ```$ git clone  ```
