@@ -3,8 +3,8 @@ import secrets
 from PIL import Image
 from flask import render_template,url_for,flash, redirect,request, abort
 from flask3 import app,db,bcrypt
-from flask3.forms import RegistrationForm, LoginForm,UpdateAccountForm,PostForm
-from flask3.models import User,Post
+from flask3.forms import RegistrationForm, LoginForm,UpdateAccountForm,PostForm, CommentsForm
+from flask3.models import User,Post,Comment
 from flask_login import login_user,current_user,logout_user,login_required
 
 
@@ -13,7 +13,8 @@ from flask_login import login_user,current_user,logout_user,login_required
 @app.route('/home')
 def home():
     posts = Post.query.all()
-    return render_template('home.html',posts= posts)
+    comments = Comment.query.all()
+    return render_template('home.html',posts= posts,comments =comments)
 
 @app.route('/about')
 def about():
@@ -138,3 +139,15 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('home'))
+
+@app.route('/post/comments',methods=['GET','POST'])
+@login_required
+def comments():    
+    form= CommentsForm()  
+    if form.validate_on_submit():
+        new_comment = Comment(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(new_comment)
+        db.session.commit()
+        flash('Your post has been created!','success')
+        return redirect(url_for('home'))
+    return render_template('comments.html',title='Comment',form=form, legend='New comment')
