@@ -3,8 +3,8 @@ from flask import (render_template, url_for, flash,
 
 from flask_login import current_user, login_required
 from flask3 import db
-from flask3.models import Post
-from flask3.posts.forms import PostForm
+from flask3.models import Post,Comment
+from flask3.posts.forms import PostForm, CommentsForm
 
 
 
@@ -20,7 +20,7 @@ def new_post():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!','success')
-        return redirect(url_for('home'))
+        return redirect(url_for('main.home'))
     return render_template('create_post.html',title='New Post',form=form, legend='New Post')
 
 
@@ -58,7 +58,7 @@ def delete_post(post_id):
     db.session.delete(post)
     db.session.commit()
     flash('Your post has been deleted!', 'success')
-    return redirect(url_for('home'))
+    return redirect(url_for('main.home'))
 
 
 
@@ -72,6 +72,6 @@ def comments():
         db.session.add(new_comment)
         db.session.commit()
         flash('Your post has been created!','success')
-        return redirect(url_for('home'))
+        return redirect(url_for('main.home'))
     return render_template('comments.html',title='Comment',form=form, legend='New comment')
 
