@@ -1,6 +1,18 @@
 {% extends "layout.html"%}
 {%block content%}
 
+<!-- Header Showcase -->
+<header id="showcase" class="grid">
+  <div class="bg-image"></div>
+  <div class="content-wrap">
+    <h1>Welcome to Pitch Solutions</h1>
+   
+    <a href="{{url_for('about')}}" class="btn">Read More</a>
+  </div>
+</header>
+
+<!-- Main Area -->
+
  {% for post in posts.items%}
 
  <article class="media content-section">

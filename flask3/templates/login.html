@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="row">
+    <div class="col-md-6">
     <div class="content-section">
+   
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -49,4 +52,25 @@
             Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
         </small>
     </div>
+    
+    </div>
+    <div class="col-md-4">
+        <div class="content-section">
+          <h3>Our Sidebar</h3>
+          <p class='text-muted'>You can put any information here you'd like.
+            <ul class="list-group">
+   
+                <span>
+                    <a href="#" class="fas fa-facebook"></a>
+                    <a href="#" class="fas fa-twitter"></a>
+                    <a href="#" class="fas fa-google"></a>
+                    <a href="#" class="fas fa-linkedin"></a>
+                    <a href="#" class="fas fa-youtube"></a>
+                </span>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    
 {% endblock content %}
