@@ -71,7 +71,7 @@ def comments():
         new_comment = Comment(title=form.title.data, content=form.content.data, author=current_user)
         db.session.add(new_comment)
         db.session.commit()
-        flash('Your post has been created!','success')
+        flash('Your comment has been created!','success')
         return redirect(url_for('main.home'))
     return render_template('comments.html',title='Comment',form=form, legend='New comment')
 
