@@ -20,7 +20,7 @@ def register():
        db.session.add(user)
        db.session.commit()
        flash('Your account has been created! You are now able to log in', 'success')
-       return redirect(url_for('user.login'))
+       return redirect(url_for('users.login'))
 
    return render_template('register.html',title="register", form= form)
 
@@ -87,7 +87,7 @@ def reset_request():
         user = User.query.filter_by(email=form.email.data).first()
         send_reset_email(user)
         flash('An email has been sent with instructions to reset your password.', 'info')
-        return redirect(url_for('user.login'))
+        return redirect(url_for('users.login'))
     return render_template('reset_request.html', title='Reset Password', form=form)
 
 
@@ -106,5 +106,5 @@ def reset_token(token):
         user.password = hashed_password
         db.session.commit()
         flash('Your password has been updated! You are now able to log in', 'success')
-        return redirect(url_for('user.login'))
+        return redirect(url_for('users.login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
