@@ -1,5 +1,5 @@
 # Pitch Application
- <img src="./u.png">
+ <img src="./p.png">
 
 #### By:
 1. Joseph Nganga ; lead developer
