@@ -33,10 +33,10 @@
    <li class="list-group-item" style="font-size: 14px; color: dodgerblue;">
            <ul class="list-group list-group-flush">
                   <a href="">
-                    <span class="fas fa-thumbs-up"></span>
+                    <span id="upvote" class="fas fa-thumbs-up"></span>
                 </a>&ensp;
                 <a href="">
-                    <span class="fas fa-thumbs-down"></span>
+                    <span id="downvote" class="fas fa-thumbs-down"></span>
                 </a>&ensp;
                 <a href="{{ url_for('posts.comments') }}">
                     <span class="fas fa-comments"></span>
@@ -46,7 +46,22 @@
             
         </ul>
         
-
+        <div id="app">
+          <div class="container-fluid">
+            <ul class="list-group">
+              <post v-for="post in posts" :post="post"></post>
+            </ul>
+          </div>
+        </div>
+        
+        <template id="post-template">
+          <li class="list-group-item">
+            <i class="glyphicon glyphicon-chevron-up" @click="upvote"></i>
+            <span class="label label-primary">{{ votes }}</span>
+            <i class="glyphicon glyphicon-chevron-down" @click="downvote"></i>
+            <a>{{ post.title }}</a>
+          </li>
+        </template>
       </li>
  </article>
  
