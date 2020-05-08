@@ -1,4 +1,4 @@
-# News API Application
+# Pitch Application
  <img src="./u.png">
 
 #### By:
