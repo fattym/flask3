@@ -1,4 +1,4 @@
-#!/home/scar/Documents/flask3/virtual/bin/python3.6
+#!/home/scar/Documents/flask3/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
